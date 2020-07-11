@@ -149,9 +149,9 @@ function () {
       }
     }); // add event listener on the marker
 
-    marker.addListener('click', function () {
+    marker.addListener("click", function () {
       var info = new google.maps.InfoWindow({
-        content: 'Holla!'
+        content: mappable.markerContent()
       });
       info.open(_this.googleMap, marker);
     });
@@ -85159,12 +85159,16 @@ var Company =
 function () {
   function Company() {
     this.companyName = faker_1.default.company.companyName();
-    this.catchPhtase = faker_1.default.company.catchPhrase();
+    this.catchPhrase = faker_1.default.company.catchPhrase();
     this.location = {
       lat: parseFloat(faker_1.default.address.latitude()),
       lng: parseFloat(faker_1.default.address.longitude())
     };
   }
+
+  Company.prototype.markerContent = function () {
+    return "\n    <h1>Company Name : " + this.companyName + "</h1>\n    <h3>Catch Phrase : " + this.catchPhrase + "</h3>\n    ";
+  };
 
   return Company;
 }();
@@ -85198,7 +85202,7 @@ function () {
   }
 
   User.prototype.markerContent = function () {
-    return "Name ";
+    return "\n    <h2>Name : " + this.name + "</h2>\n    ";
   };
 
   return User;

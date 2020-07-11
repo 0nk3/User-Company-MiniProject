@@ -1,6 +1,6 @@
-import { } from "google-maps";
+import {} from "google-maps";
 
-interface Mappable{
+interface Mappable {
   location: {
     lat: number;
     lng: number;
@@ -25,17 +25,15 @@ export class CustomMap {
       map: this.googleMap,
       position: {
         lat: mappable.location.lat,
-        lng: mappable.location.lng
-      }
+        lng: mappable.location.lng,
+      },
     });
-  // add event listener on the marker
-    marker.addListener('click', () => {
+    // add event listener on the marker
+    marker.addListener("click", () => {
       const info = new google.maps.InfoWindow({
-        content: 'Holla!'
+        content: mappable.markerContent(),
       });
       info.open(this.googleMap, marker);
     });
-  
   }
-
 }
