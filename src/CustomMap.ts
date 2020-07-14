@@ -20,6 +20,7 @@ export class CustomMap {
       zoom: 8,
     });
   }
+  // Creation and addition of the marker on the map
   addMarker(mappable: Mappable): void {
     const marker = new google.maps.Marker({
       map: this.googleMap,
