@@ -17,7 +17,7 @@ export class CustomMap {
         lat: 0,
         lng: 0,
       },
-      zoom: 1,
+      zoom: 8,
     });
   }
   addMarker(mappable: Mappable): void {

@@ -134,7 +134,7 @@ function () {
         lat: 0,
         lng: 0
       },
-      zoom: 1
+      zoom: 8
     });
   }
 
@@ -85257,7 +85257,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44645" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45425" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
